@@ -7,10 +7,10 @@ def _apply_view_defaults() -> None:
     try:
         from ocp_vscode import set_defaults
         try:
-            set_defaults(reset_camera=False, axes=False, grid_xy=False, transparent=False, show_logo=False)
+            set_defaults(reset_camera=False, axes=False, transparent=False, show_logo=False)  # type: ignore[call-arg]
         except TypeError:
             # if your version doesn't have show_logo
-            set_defaults(reset_camera=False, axes=False, grid_xy=False, transparent=False)
+            set_defaults(reset_camera=False, axes=False, transparent=False)
     except Exception:
         pass
 
@@ -28,10 +28,10 @@ def _auto_pick_object(ns: dict[str, Any]):
         if k in ns:
             return ns[k]
     try:
-        from build123d import Part, Compound, Shape, Assembly, BuildPart
+        from build123d import Part, Compound, Shape, BuildPart
         last = None
         for v in ns.values():
-            if isinstance(v, (Part, Compound, Shape, Assembly, BuildPart)):
+            if isinstance(v, (Part, Compound, Shape, BuildPart)):
                 last = v
         return last
     except Exception:
@@ -54,7 +54,12 @@ def export_stl(path: str, out_path: str | None = None) -> None:
     obj = _auto_pick_object(ns)
     if obj is None:
         raise SystemExit("Geometry not found: put the object in result / MODEL / part / assembly.")
-    from build123d import exporters
+
+    # Convert BuildPart to Part if needed
+    from build123d import BuildPart, export_stl as b3d_export_stl
+    if isinstance(obj, BuildPart):
+        obj = obj.part
+
     p = pathlib.Path(out_path) if out_path else pathlib.Path(path).with_suffix(".stl")
-    exporters.export(obj, p)
+    b3d_export_stl(obj, str(p))  # type: ignore[arg-type]
     print(f"STL: {p}")
