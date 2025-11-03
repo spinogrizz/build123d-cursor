@@ -1,0 +1,12 @@
+// settings.json (workspace)
+{
+    "emeraldwalk.runonsave": {
+      "commands": [
+        {
+          "match": "(?<=/|\\\\)project[^/\\\\]*\\.py$",
+          "cmd": "workbench.action.tasks.runTask Render: Show in OCP"
+        }
+      ]
+    }
+  }
+  

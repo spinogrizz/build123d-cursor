@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Render: Show in OCP",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "-c",
+        "import os,sys; sys.path.insert(0, os.getenv(\"WORKSPACE\",\"${workspaceFolder}\")); import boot as b; b.render(r\"${file}\")"
+      ],
+      "options": {
+        "env": {
+          "WORKSPACE": "${workspaceFolder}",
+          "PYTHONUNBUFFERED": "1"
+        }
+      },
+      "presentation": {
+        "reveal": "silent",
+        "revealProblems": "onProblem",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },    
+    {
+      "label": "Export: STL next to script",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "-c",
+        "import os,sys; sys.path.insert(0, os.getenv('WORKSPACE','${workspaceFolder}')); import boot as b; b.export_stl(r'${file}')"
+      ],
+      "options": {
+        "env": {
+          "WORKSPACE": "${workspaceFolder}",
+          "PYTHONUNBUFFERED": "1"
+        }
+      },
+      "problemMatcher": []
+    }
+  ]
+}
