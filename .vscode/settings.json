@@ -28,6 +28,10 @@
     "ocp-cad-viewer.backend.hideTerminal": true,
     "ocp-cad-viewer.view.editorGroup": "two",  // Всегда открывать viewer справа (вторая колонка)
     "ocp-cad-viewer.view.autoUpdateOnSave": true,  // Автоматически обновлять при сохранении
+    "ocp-cad-viewer.view.dark": true,  // Тёмная тема viewer
+    "ocp-cad-viewer.view.reset_camera": "KEEP",  // Не сбрасывать позицию камеры
+    "ocp-cad-viewer.render.default_color": "#528dc1",  // Цвет модели по умолчанию
+    "ocp-cad-viewer.render.default_edgecolor": "#303030",  // Цвет рёбер по умолчанию
 
     // Layout settings - новые файлы открываются в активной колонке (слева)
     "workbench.editor.revealIfOpen": true,
