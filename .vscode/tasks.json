@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Render: Show in OCP",
+      "label": "Render: Current file",
       "type": "shell",
       "command": "python",
       "args": [
@@ -24,14 +24,10 @@
         "clear": true
       },
       "group": { "kind": "build", "isDefault": true },
-      "problemMatcher": [],
-      "icon": {
-        "id": "eye",
-        "color": "terminal.ansiBlue"
-      }
+      "problemMatcher": []
     },
     {
-      "label": "Export: STL next to script",
+      "label": "Export: Current file to STL",
       "type": "shell",
       "command": "python",
       "args": [
@@ -44,11 +40,7 @@
           "PYTHONUNBUFFERED": "1"
         }
       },
-      "problemMatcher": [],
-      "icon": {
-        "id": "export",
-        "color": "terminal.ansiGreen"
-      }
+      "problemMatcher": []
     }
   ]
 }

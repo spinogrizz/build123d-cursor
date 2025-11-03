@@ -1,4 +1,4 @@
-.stl
+*.stl
 __pycache__/
 *.md
 !README.md

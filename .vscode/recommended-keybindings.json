@@ -3,15 +3,15 @@
 // Or use Command Palette: "Preferences: Open Keyboard Shortcuts (JSON)"
 [
   {
-    "key": "ctrl+shift+r",
+    "key": "f5",
     "command": "workbench.action.tasks.runTask",
-    "args": "Render: Show in OCP",
+    "args": "Render: Current file",
     "when": "editorLangId == python"
   },
   {
-    "key": "ctrl+shift+e",
+    "key": "f6",
     "command": "workbench.action.tasks.runTask",
-    "args": "Export: STL next to script",
+    "args": "Export: Current file to STL",
     "when": "editorLangId == python"
   }
 ]

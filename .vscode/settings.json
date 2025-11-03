@@ -3,15 +3,34 @@
     "emeraldwalk.runonsave": {
       "commands": [
         {
-          "match": "^(?!.*([\\/\\\\]libs[\\/\\\\]|^[^\\/\\\\]*$)).*\\.py$",
-          "cmd": "workbench.action.tasks.runTask Render: Show in OCP"
+          "match": ".*\\.py$",
+          "isAsync": true,
+          "cmd": "python -c \"import os,sys; sys.path.insert(0, '${workspaceFolder}'); import boot as b; b.render(r'${file}')\""
         }
       ]
     },
-    // Task Explorer settings (if extension is installed)
-    "taskExplorer.enableSideBar": true,
-    "taskExplorer.enableExplorerView": true,
-    "taskExplorer.exclude": [],
+
+    // Task Buttons - простые кнопки внизу экрана
+    "VsCodeTaskButtons.showCounter": false,
+    "VsCodeTaskButtons.tasks": [
+      {
+        "label": "$(eye) Render",
+        "task": "Render: Current file"
+      },
+      {
+        "label": "$(export) Export STL",
+        "task": "Export: Current file to STL"
+      }
+    ],
+
+    // OCP Viewer settings
+    "ocp-cad-viewer.backend.autoStart": true,
+    "ocp-cad-viewer.backend.hideTerminal": true,
+    "ocp-cad-viewer.view.editorGroup": "two",  // Всегда открывать viewer справа (вторая колонка)
+
+    // Layout settings - новые файлы открываются в активной колонке (слева)
+    "workbench.editor.revealIfOpen": true,
+    "workbench.editor.openSideBySideDirection": "right",  // При split - новая колонка справа
 
     // Python/Pylance settings for build123d
     // boot.py performs dynamic import of build123d at runtime

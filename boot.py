@@ -7,10 +7,10 @@ def _apply_view_defaults() -> None:
     try:
         from ocp_vscode import set_defaults
         try:
-            set_defaults(reset_camera=False, axes=False, transparent=False, show_logo=False)  # type: ignore[call-arg]
+            set_defaults(reset_camera=Camera.CENTER, axes=False, transparent=False, show_logo=False)  # type: ignore[call-arg]
         except TypeError:
             # if your version doesn't have show_logo
-            set_defaults(reset_camera=False, axes=False, transparent=False)
+            set_defaults(reset_camera=Camera.CENTER, axes=False, transparent=False)
     except Exception:
         pass
 
