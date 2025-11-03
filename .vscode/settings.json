@@ -1,6 +1,6 @@
 // settings.json (workspace)
 {
-    // Run On Save - автоматический рендер при сохранении .py файлов
+    // Run On Save - automatic render on .py file save
     "runOnSave.statusMessageTimeout": 3000,
     "runOnSave.commands": [
       {
@@ -10,7 +10,7 @@
       }
     ],
 
-    // Task Buttons - простые кнопки внизу экрана
+    // Task Buttons - simple buttons at the bottom of the screen
     "VsCodeTaskButtons.showCounter": false,
     "VsCodeTaskButtons.tasks": [
       {
@@ -26,16 +26,16 @@
     // OCP Viewer settings
     "ocp-cad-viewer.backend.autoStart": true,
     "ocp-cad-viewer.backend.hideTerminal": true,
-    "ocp-cad-viewer.view.editorGroup": "two",  // Всегда открывать viewer справа (вторая колонка)
-    "ocp-cad-viewer.view.autoUpdateOnSave": true,  // Автоматически обновлять при сохранении
-    "ocp-cad-viewer.view.dark": true,  // Тёмная тема viewer
-    "ocp-cad-viewer.view.reset_camera": "KEEP",  // Не сбрасывать позицию камеры
-    "ocp-cad-viewer.render.default_color": "#528dc1",  // Цвет модели по умолчанию
-    "ocp-cad-viewer.render.default_edgecolor": "#303030",  // Цвет рёбер по умолчанию
+    "ocp-cad-viewer.view.editorGroup": "two",  // Always open viewer on the right (second column)
+    "ocp-cad-viewer.view.autoUpdateOnSave": true,  // Auto-update on save
+    "ocp-cad-viewer.view.dark": true,  // Dark theme for viewer
+    "ocp-cad-viewer.view.reset_camera": "KEEP",  // Keep camera position
+    "ocp-cad-viewer.render.default_color": "#528dc1",  // Default model color
+    "ocp-cad-viewer.render.default_edgecolor": "#303030",  // Default edge color
 
-    // Layout settings - новые файлы открываются в активной колонке (слева)
+    // Layout settings - new files open in the active column (left)
     "workbench.editor.revealIfOpen": true,
-    "workbench.editor.openSideBySideDirection": "right",  // При split - новая колонка справа
+    "workbench.editor.openSideBySideDirection": "right",  // On split - new column on the right
 
     // Python/Pylance settings for build123d
     // boot.py performs dynamic import of build123d at runtime

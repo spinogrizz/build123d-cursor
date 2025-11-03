@@ -1,4 +1,5 @@
 *.stl
 __pycache__/
+.claude
 *.md
 !README.md
