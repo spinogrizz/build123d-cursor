@@ -1,6 +1,3 @@
-// Recommended keybindings for build123d workspace
-// To use: copy these into your global keybindings.json (Ctrl+K Ctrl+S or Cmd+K Cmd+S)
-// Or use Command Palette: "Preferences: Open Keyboard Shortcuts (JSON)"
 [
   {
     "key": "f5",

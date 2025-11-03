@@ -4,14 +4,10 @@
     {
       "label": "Render: Current file",
       "type": "shell",
-      "command": "python",
-      "args": [
-        "-c",
-        "import os,sys; sys.path.insert(0, os.getenv(\"WORKSPACE\",\"${workspaceFolder}\")); import boot as b; b.render(r\"${file}\")"
-      ],
+      "command": "cd ${workspaceFolder} && python -c 'import os; import boot; boot.render(os.environ[\"FILE\"])'",
       "options": {
         "env": {
-          "WORKSPACE": "${workspaceFolder}",
+          "FILE": "${file}",
           "PYTHONUNBUFFERED": "1"
         }
       },
@@ -29,14 +25,10 @@
     {
       "label": "Export: Current file to STL",
       "type": "shell",
-      "command": "python",
-      "args": [
-        "-c",
-        "import os,sys; sys.path.insert(0, os.getenv('WORKSPACE','${workspaceFolder}')); import boot as b; b.export_stl(r'${file}')"
-      ],
+      "command": "cd ${workspaceFolder} && python -c 'import os; import boot; boot.export_stl(os.environ[\"FILE\"])'",
       "options": {
         "env": {
-          "WORKSPACE": "${workspaceFolder}",
+          "FILE": "${file}",
           "PYTHONUNBUFFERED": "1"
         }
       },

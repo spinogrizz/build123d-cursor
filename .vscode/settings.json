@@ -1,14 +1,14 @@
 // settings.json (workspace)
 {
-    "emeraldwalk.runonsave": {
-      "commands": [
-        {
-          "match": ".*\\.py$",
-          "isAsync": true,
-          "cmd": "python -c \"import os,sys; sys.path.insert(0, '${workspaceFolder}'); import boot as b; b.render(r'${file}')\""
-        }
-      ]
-    },
+    // Run On Save - автоматический рендер при сохранении .py файлов
+    "runOnSave.statusMessageTimeout": 3000,
+    "runOnSave.commands": [
+      {
+        "match": ".*\\.py$",
+        "notMatch": "boot\\.py$",
+        "command": "cd ${workspaceFolder} && FILE=${file} python -c 'import os; import boot; boot.render(os.environ[\"FILE\"])'"
+      }
+    ],
 
     // Task Buttons - простые кнопки внизу экрана
     "VsCodeTaskButtons.showCounter": false,
@@ -27,6 +27,7 @@
     "ocp-cad-viewer.backend.autoStart": true,
     "ocp-cad-viewer.backend.hideTerminal": true,
     "ocp-cad-viewer.view.editorGroup": "two",  // Всегда открывать viewer справа (вторая колонка)
+    "ocp-cad-viewer.view.autoUpdateOnSave": true,  // Автоматически обновлять при сохранении
 
     // Layout settings - новые файлы открываются в активной колонке (слева)
     "workbench.editor.revealIfOpen": true,
