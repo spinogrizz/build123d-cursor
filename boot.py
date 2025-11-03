@@ -1,4 +1,4 @@
-# boot.py (в корне workspace)
+# boot.py (in workspace root)
 from __future__ import annotations
 import runpy, pathlib
 from typing import Any
@@ -9,7 +9,7 @@ def _apply_view_defaults() -> None:
         try:
             set_defaults(reset_camera=False, axes=False, grid_xy=False, transparent=False, show_logo=False)
         except TypeError:
-            # если у твоей версии нет show_logo
+            # if your version doesn't have show_logo
             set_defaults(reset_camera=False, axes=False, grid_xy=False, transparent=False)
     except Exception:
         pass
@@ -53,7 +53,7 @@ def export_stl(path: str, out_path: str | None = None) -> None:
     ns = runpy.run_path(path, init_globals=_seed_globals())
     obj = _auto_pick_object(ns)
     if obj is None:
-        raise SystemExit("Не нашёл геометрию: положи объект в result / MODEL / part / assembly.")
+        raise SystemExit("Geometry not found: put the object in result / MODEL / part / assembly.")
     from build123d import exporters
     p = pathlib.Path(out_path) if out_path else pathlib.Path(path).with_suffix(".stl")
     exporters.export(obj, p)

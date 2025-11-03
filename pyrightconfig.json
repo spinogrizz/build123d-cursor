@@ -1,0 +1,13 @@
+{
+  "include": ["."],
+  "executionEnvironments": [
+    {
+      "root": ".",
+      "extraPaths": ["."],
+      "pythonVersion": "3.11"
+    }
+  ],
+  "typeCheckingMode": "basic",
+  "reportUndefinedVariable": "none",
+  "reportMissingImports": "warning"
+}

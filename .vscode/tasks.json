@@ -24,8 +24,12 @@
         "clear": true
       },
       "group": { "kind": "build", "isDefault": true },
-      "problemMatcher": []
-    },    
+      "problemMatcher": [],
+      "icon": {
+        "id": "eye",
+        "color": "terminal.ansiBlue"
+      }
+    },
     {
       "label": "Export: STL next to script",
       "type": "shell",
@@ -40,7 +44,11 @@
           "PYTHONUNBUFFERED": "1"
         }
       },
-      "problemMatcher": []
+      "problemMatcher": [],
+      "icon": {
+        "id": "export",
+        "color": "terminal.ansiGreen"
+      }
     }
   ]
 }

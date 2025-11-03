@@ -1,0 +1,17 @@
+// Recommended keybindings for build123d workspace
+// To use: copy these into your global keybindings.json (Ctrl+K Ctrl+S or Cmd+K Cmd+S)
+// Or use Command Palette: "Preferences: Open Keyboard Shortcuts (JSON)"
+[
+  {
+    "key": "ctrl+shift+r",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Render: Show in OCP",
+    "when": "editorLangId == python"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Export: STL next to script",
+    "when": "editorLangId == python"
+  }
+]

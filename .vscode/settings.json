@@ -3,10 +3,23 @@
     "emeraldwalk.runonsave": {
       "commands": [
         {
-          "match": "(?<=/|\\\\)project[^/\\\\]*\\.py$",
+          "match": "^(?!.*([\\/\\\\]libs[\\/\\\\]|^[^\\/\\\\]*$)).*\\.py$",
           "cmd": "workbench.action.tasks.runTask Render: Show in OCP"
         }
       ]
+    },
+    // Task Explorer settings (if extension is installed)
+    "taskExplorer.enableSideBar": true,
+    "taskExplorer.enableExplorerView": true,
+    "taskExplorer.exclude": [],
+
+    // Python/Pylance settings for build123d
+    // boot.py performs dynamic import of build123d at runtime
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+      "reportUndefinedVariable": "none",  // Disable errors - boot.py imports dynamically
+      "reportMissingImports": "warning"
     }
   }
   
